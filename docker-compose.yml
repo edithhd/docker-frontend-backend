@@ -17,7 +17,7 @@ services:
 
   redis:
     image: redis:5.0.3-alpine
-    container_name: aegira-loan-redis
+    container_name: aegira-loan-redis-2
     command: redis-server --appendonly yes
     ports:
       - "6379:6379"
@@ -58,6 +58,19 @@ services:
       - backend
     ports:
       - "80:80"
+
+  runner:
+    image: myoung34/github-runner:latest
+    container_name: github-runner-2
+    environment:
+        REPO_URL: https://github.com/edithhd/docker-frontend-backend
+        RUNNER_NAME: laptop-runner
+        ACCESS_TOKEN: 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   # ganti dengan token
+        LABELS: docker-local
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./runner-data:/runner/data
+    restart: unless-stopped
 
 volumes:
   postgres_data:
