@@ -38,8 +38,8 @@ jobs:
       - name: Build Backend Image
         run: |
           docker build \
-            -t edithhd/aegira-loan-service:latest \
-            ./aegira-loan-service
+            -t edithhd/aegira-loan-service:latest
+            ./aegira-loan-service/aegira-loan-service
 
       - name: Build Frontend Image
         run: |
