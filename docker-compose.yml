@@ -52,22 +52,11 @@ services:
 
   frontend:
     image: edithhd/creditappdemo-2:latest
-    pull_policy: always9    container_name: aegira-frontend
+    pull_policy: always
+    container_name: aegira-frontend
     ports:
       - "80:80"
 
-  runner:
-    image: myoung34/github-runner:latest
-    container_name: github-runner-2
-    environment:
-        REPO_URL: https://github.com/edithhd/docker-frontend-backend
-        RUNNER_NAME: laptop-runner
-        ACCESS_TOKEN: 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   # ganti dengan token
-        LABELS: docker-local
-    volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - ./runner-data:/runner/data
-    restart: unless-stopped
 
 volumes:
   postgres_data:
