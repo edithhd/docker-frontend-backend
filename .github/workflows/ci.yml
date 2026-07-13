@@ -36,13 +36,13 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build Backend Image
-        run: 
+        run: |
           docker build \
             -t edithhd/aegira-loan-service:latest \
             ./aegira-loan-service
 
       - name: Build Frontend Image
-        run:
+        run: |
           docker build \
             -t edithhd/creditappdemo-2:latest \
             ./creditappdemo-2
