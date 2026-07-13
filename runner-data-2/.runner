@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 22,
+  "agentName": "laptop-runner-2",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus13.actions.githubusercontent.com/ErVGHN6gbpGv3PhALCywNq7DZTzpUqOz9UCih2drsgGNta2H1p/",
+  "gitHubUrl": "https://github.com/edithhd/docker-frontend-backend",
+  "workFolder": "/tmp/aegira-creditappdemo-runner-2",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

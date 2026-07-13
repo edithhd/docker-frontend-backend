@@ -1,23 +1,23 @@
-name: aegira-creditappdemo-runner          
+name: runner-2         
  
 services:                                  
   runner:                                 
     image: myoung34/github-runner:latest  
-    container_name: github-runner-aegira-creditappdemo  
+    container_name: runner-2
  
     environment:                          
       REPO_URL: https://github.com/edithhd/docker-frontend-backend       
-      RUNNER_NAME: laptop-runner           
-      RUNNER_TOKEN: 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   
+      RUNNER_NAME: laptop-runner-2          
+      RUNNER_TOKEN: BLOSBYUBEEFTHFNOJFR42NLKKRRLS
       LABELS: docker-local                 
-      RUNNER_WORKDIR: /tmp/aegira-creditappdemo-runner   
+      RUNNER_WORKDIR: /tmp/aegira-creditappdemo-runner-2 
       CONFIGURED_ACTIONS_RUNNER_FILES_DIR: /runner/data  
       DISABLE_AUTOMATIC_DEREGISTRATION: "true"           
       UNSET_CONFIG_VARS: "true"          
  
     volumes:                               
       - /var/run/docker.sock:/var/run/docker.sock   
-      - ./runner-data:/runner/data                 
-      - ./runner-work:/tmp/aegira-creditappdemo-runner  
+      - ./runner-data-2:/runner/data                 
+      - ./runner-work-2:/tmp/aegira-creditappdemo-runner  
  
     restart: unless-stopped              
