@@ -38,7 +38,7 @@ jobs:
       - name: Build Backend Image
         run: |
           docker build \
-            -t edithhd/aegira-loan-service:latest
+            -t edithhd/aegira-loan-service:latest \
             ./aegira-loan-service/aegira-loan-service
 
       - name: Build Frontend Image
@@ -48,15 +48,15 @@ jobs:
             ./creditappdemo-2
 
       - name: Push Backend Image
-        run: 
+        run: |
           docker push edithhd/aegira-loan-service:latest
 
       - name: Push Frontend Image
-        run: 
+        run: |
           docker push edithhd/creditappdemo-2:latest
 
       - name: Pull latest image
-        run: 
+        run: |
           docker compose pull
 
       - name: Start application
