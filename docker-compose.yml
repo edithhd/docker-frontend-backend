@@ -25,9 +25,9 @@ services:
       - redis_data:/data
 
   backend:
-    build:
-      context: ./aegira-loan-service/aegira-loan-service
-      dockerfile: Dockerfile
+    image: edithhd/aegira-loan-service:latest
+    pull_policy: always
+    container_name: aegira-backend
     depends_on:
       postgres:
         condition: service_healthy
@@ -51,11 +51,8 @@ services:
       IDEMPOTENCY_TTL_SECONDS: 86400
 
   frontend:
-    build:
-      context: ./creditappdemo-2
-      dockerfile: Dockerfile
-    depends_on:
-      - backend
+    image: edithhd/creditappdemo-2:latest
+    pull_policy: always9    container_name: aegira-frontend
     ports:
       - "80:80"
 
